@@ -4,9 +4,13 @@
   "description": "Convert Hangul(Korean letter) to Hiragana(Japanese)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "tsc --build",
+    "clean": "tsc --build --clean"
   },
   "keywords": [],
   "author": "Hyunsik Lim",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "typescript": "^4.5.4"
+  }
 }
