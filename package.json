@@ -10,9 +10,15 @@
   "scripts": {
     "test": "jest --config jestconfig.json",
     "build": "tsc --build",
-    "clean": "tsc --build --clean"
+    "clean": "tsc --build --clean",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test"
   },
-  "keywords": [],
+  "keywords": [
+    "Kr",
+    "Jp",
+    "Hangul"
+  ],
   "author": "Hyunsik Lim",
   "license": "ISC",
   "devDependencies": {
