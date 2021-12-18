@@ -1,5 +1,3 @@
-// having fun with just testing around.
-
 const Choo: Array<string> = [
   "ㄱ",
   "ㄲ",
@@ -77,40 +75,29 @@ const Jong: Array<string> = [
 const koUnicodeStartsAt = 0xac00; //"가"
 const koUnicodeEndsAt = 0xd7af; //"가"
 
-let test = "안녕, 세상";
+export class Kojp {
+  constructor() {}
 
-const isHangul = (letter: string): boolean => {
-  const letterIndex: number = letter.charCodeAt(0);
-  return letterIndex >= koUnicodeStartsAt && letterIndex <= koUnicodeEndsAt;
-};
+  isHangul = (letter: string): boolean => {
+    const letterIndex: number = letter.charCodeAt(0);
+    return letterIndex >= koUnicodeStartsAt && letterIndex <= koUnicodeEndsAt;
+  };
 
-const getChoo = (letter: string): string => {
-  let chooIndex: number = Math.floor(
-    Math.floor((letter.charCodeAt(0) - koUnicodeStartsAt) / 28) / 21
-  );
-  return Choo[chooIndex];
-};
-
-const getJung = (letter: string): string => {
-  let jungIndex: number =
-    Math.floor((letter.charCodeAt(0) - koUnicodeStartsAt) / 28) % 21;
-  return Jung[jungIndex];
-};
-
-const getJong = (letter: string): string => {
-  let jongIndex: number = (letter.charCodeAt(0) - koUnicodeStartsAt) % 28;
-  return Jong[jongIndex];
-};
-
-console.log(`${test} is composed by `);
-test.split("").map((letter) => {
-  if (isHangul(letter)) {
-    console.log(
-      `${letter}: '${getChoo(letter)}','${getJung(letter)}','${getJong(
-        letter
-      )}'`
+  getChoo = (letter: string): string => {
+    let chooIndex: number = Math.floor(
+      Math.floor((letter.charCodeAt(0) - koUnicodeStartsAt) / 28) / 21
     );
-  } else {
-    console.log(`${letter}`);
-  }
-});
+    return Choo[chooIndex];
+  };
+
+  getJung = (letter: string): string => {
+    let jungIndex: number =
+      Math.floor((letter.charCodeAt(0) - koUnicodeStartsAt) / 28) % 21;
+    return Jung[jungIndex];
+  };
+
+  getJong = (letter: string): string => {
+    let jongIndex: number = (letter.charCodeAt(0) - koUnicodeStartsAt) % 28;
+    return Jong[jongIndex];
+  };
+}

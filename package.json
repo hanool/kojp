@@ -8,6 +8,7 @@
     "lib/**/*"
   ],
   "scripts": {
+    "test": "jest --config jestconfig.json",
     "build": "tsc --build",
     "clean": "tsc --build --clean"
   },
@@ -15,6 +16,9 @@
   "author": "Hyunsik Lim",
   "license": "ISC",
   "devDependencies": {
+    "@types/jest": "^27.0.3",
+    "jest": "^27.4.5",
+    "ts-jest": "^27.1.2",
     "typescript": "^4.5.4"
   }
 }
