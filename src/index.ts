@@ -78,7 +78,7 @@ const Jong: Array<string> = [
 const koUnicodeStartsAt = 0xac00; //"가"
 const koUnicodeEndsAt = 0xd7af; //"가"
 
-export class Kojp {
+export class kojp {
   constructor() {}
 
   isHangul = (letter: string): boolean => {
