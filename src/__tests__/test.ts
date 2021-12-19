@@ -21,3 +21,13 @@ test("Test getJung(input)", () => {
 test("Test getJong(input)", () => {
   expect(kojp.getJong("값")).toBe("ㅄ");
 });
+
+test("convert", () => {
+  expect(kojp.convert("뭐해, 바보야")).toBe("むぉへ, ばぼや");
+});
+
+test("convert with batchim", () => {
+  expect(kojp.convert("앗, 이것은 밭침이다.")).toBe(
+    "あっ, いごっうん ばっちむいだ."
+  );
+});

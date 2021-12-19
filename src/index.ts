@@ -1,3 +1,6 @@
+import { krjp } from "./krjp";
+import { batchim } from "./batchim";
+
 const Choo: Array<string> = [
   "ㄱ",
   "ㄲ",
@@ -103,5 +106,28 @@ export class Kojp {
 
   getKrIndex = (letter: string): number => {
     return letter.charCodeAt(0) - koUnicodeStartsAt;
+  };
+
+  convert = (src: string): string => {
+    let res: string = "";
+
+    for (let i = 0; i < src.length; i++) {
+      let char = src[i];
+      if (!this.isHangul(char)) {
+        res += char;
+      } else {
+        let cho: string = this.getChoo(char);
+        let jung: string = this.getJung(char);
+
+        res += krjp[cho][jung];
+
+        let jong = this.getJong(char);
+        if (jong !== "") {
+          res += batchim[jong];
+        }
+      }
+    }
+
+    return res;
   };
 }
