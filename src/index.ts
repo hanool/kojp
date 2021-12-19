@@ -85,19 +85,23 @@ export class Kojp {
 
   getChoo = (letter: string): string => {
     let chooIndex: number = Math.floor(
-      Math.floor((letter.charCodeAt(0) - koUnicodeStartsAt) / 28) / 21
+      Math.floor(this.getKrIndex(letter) / Jong.length) / Jung.length
     );
     return Choo[chooIndex];
   };
 
   getJung = (letter: string): string => {
     let jungIndex: number =
-      Math.floor((letter.charCodeAt(0) - koUnicodeStartsAt) / 28) % 21;
+      Math.floor(this.getKrIndex(letter) / Jong.length) % Jung.length;
     return Jung[jungIndex];
   };
 
   getJong = (letter: string): string => {
-    let jongIndex: number = (letter.charCodeAt(0) - koUnicodeStartsAt) % 28;
+    let jongIndex: number = this.getKrIndex(letter) % Jong.length;
     return Jong[jongIndex];
+  };
+
+  getKrIndex = (letter: string): number => {
+    return letter.charCodeAt(0) - koUnicodeStartsAt;
   };
 }
