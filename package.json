@@ -1,6 +1,6 @@
 {
   "name": "kojp",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Convert Hangul(Korean letter) to Hiragana(Japanese)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -14,6 +14,10 @@
     "prepare": "npm run build",
     "prepublishOnly": "npm test"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hanool/kojp.git"
+  },
   "keywords": [
     "Kr",
     "Jp",
@@ -21,6 +25,10 @@
   ],
   "author": "Hyunsik Lim",
   "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hanool/kojp/issues"
+  },
+  "homepage": "https://github.com/hanool/kojp#readme",
   "devDependencies": {
     "@types/jest": "^27.0.3",
     "jest": "^27.4.5",
