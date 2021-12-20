@@ -78,9 +78,7 @@ const Jong: Array<string> = [
 const koUnicodeStartsAt = 0xac00; //"가"
 const koUnicodeEndsAt = 0xd7af; //"가"
 
-export class kojp {
-  constructor() {}
-
+class kojp {
   isHangul = (letter: string): boolean => {
     const letterIndex: number = letter.charCodeAt(0);
     return letterIndex >= koUnicodeStartsAt && letterIndex <= koUnicodeEndsAt;
@@ -131,3 +129,5 @@ export class kojp {
     return res;
   };
 }
+
+export default new kojp();

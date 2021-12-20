@@ -2,4 +2,8 @@
 
 ## Converts Hangul Characters to Hiragana
 
-* 안녕! => アンニョン!
+```js
+const kojp = require("kojp");
+
+console.log(kojp.convert("안녕!")); // アンニョン!
+```
