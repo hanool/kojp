@@ -29,3 +29,9 @@ test("convert with batchim", () => {
     "あっ, いごっうん ばっちむいだ."
   );
 });
+
+test("convert with consonant:ㅈ", () => {
+  expect(kojp.convert("조인성 존잘, 조보아 존예")).toBe(
+    "じょいんそん じょんじゃる, じょぼあ じょんいぇ"
+  );
+});
