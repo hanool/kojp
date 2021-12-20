@@ -1,6 +1,6 @@
 {
   "name": "kojp",
-  "version": "0.2.7",
+  "version": "0.3.0",
   "description": "Convert Hangul(Korean letter) to Hiragana(Japanese)",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

@@ -35,3 +35,9 @@ test("convert with consonant:ㅈ", () => {
     "じょいんそん じょんじゃる, じょぼあ じょんいぇ"
   );
 });
+
+test("convert single consonants and vowels", () => {
+  expect(kojp.convert("ㅏㅏㅏ그냥 변환 알아서 해줘ㅓㅓㅓㅋㅋㅋㅋ")).toBe(
+    "あああぐにゃん びょんふぁん あるあそ へじょおおおㅋㅋㅋㅋ"
+  );
+});
